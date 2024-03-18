@@ -1,0 +1,95 @@
+•Gemini is an AI platform from Google that helps shift the focus from traditional text prompting to a multimodal approach, which means adding image, voice, and other inputs, to help improve your results.
+•Although multimodality has been available in other platforms, Gemini has one significant advantage, access to Google's infastructure, devices, and services.
+•The quality of models depends on the data, Youtube, Android, Email
+
+Multimodal AI can do:
+•The big change with Gemini is that it can treat different modalities as inputs such as text, audio, images, code, and video.
+•Although not all of those modalities are currently available, Most prompting today uses a category of AI called LLMs, (Large Language Models),
+They are trained on billions of parameters, which can understand and replicate the way humans communicate, but there's a lot of other models out there, 
+•Multimodal models are able to go beyond single models, 
+and consider those different inputs as prompts. 
+•It can detect emotions
+•It can look at a picture of a graph, and understand the underlying data, then write a computer program to update the information and even generate a new graph image.
+•It can also cross-reference inputs across modalities, to take prompting to a different level. 
+eg: How humans do it, hiking trail map, and use reasoning to decide, which trail is right for you, 
+
+Multimodal Model can identify plants/animals in image or video and help prepare and illustrate a timeline to share your experience with others.
+
+•With multimodality, the conversations you're having with AIs are fundamentally going to change.
+
+Specs behind Gemini Multimodels:
+•Gemini isn't just a model, but a whole family of models, that comes in different types, and varying ,
+Ultra(largest), Pro(best/scaling), Nano(most efficient)
+•Trained from the start, to process different file types simultaneously, and it can make, interferences from all that information available.
+•For video, it takes a recording and converts it to a series of stills that it can process, 
+•For audio, it's able to understand the data natively,
+instead of first converting it to text, to feed it as a prompt.
+•It can also output responses with text and images.
+•So, potentially, you should be able to record some audio, of a bird one hear in the woods, and ask it to show, a picture of what that bird looks like.
+•Features are all not available currently, but are rolling out with different versions of the models over time.
+•3 main versions of Gemini, Gemini Nano, Pro, Ultra.
+•They support a 32K parameter context length, which is small comapared to newer models.
+•Nano is the smallest of the models, meant to work preloaded into devices. It's meant for simpler tasks,
+•Summarization
+•Reading Comprehension
+•Most of the models, today are so large, that they don't run locally on machines, but rely on powerful servers, who end up doing most of the work.
+•By allowing the model to run locally, they're able to run in device.
+•Works well with Sensitive Data.
+•2 versions of Nano:
+•Nano One: Low memory devices, access to 1.8 B parameters
+•Nano Two: Higher memory products, 3.25 B parameters
+• TEST using AI Core App , under Pixel 8 Pro Series of Phones.
+•This APP does simple text prompting, 
+For now, Summarize
+•Pro Model is more capable, already running with Bard Chatbot, 2 versions:
+•Text Only
+•Multimodal Version
+•Bard is not running the multimodal version of Gemini, but the app does have image input, and uses plugins, that gives you access, to things like GMail and YouTube, 
+•To check out the multimodal version of Pro, you can take a look at Google AI Studio, or run it in your Google Cloud console under Vertex AI. 
+•It can also be used to start building apps today.
+•Real power of Gemini's multimodality, will be clear, once Ultra releases.
+•Ultra claims, that it will be the state of the art, on 30 out of 32 different benchmarks.
+
+Test: 
+•Gemini is currently available to public through Bard.
+•Model is updated from a previous model called PaLM 2, and currently uses a fine-tuned, text-only version of Gemini Pro.
+•
+Bard:
+•No multimodal features
+•It's still quite capable, By connecting search and other Google services, it is able to manage a variety of information very well
+•eg: Hike tom: Bard to plan,
+'Give me plan for this place to that place'
+•It uses Google Maps as a service.
+•Uses info from maps, as a paragraph, what to pack and all,
+•Retreives Google Maps with directions
+
+•Manage Bard's connection to other properties through extensions
+•Right now, Bard can be connected to flights, hotels, maps, Workspace(GDrive, Gmail), and Youtube.
+•New Bard with Gemini feels smoother and more useful than the old Bard.
+•The fact that it's connected to other services, makes it a more compelling experience.
+•Extensions make it useful
+•Ask weather tom, / ask videos, of people, who have done this hike, earlier
+•Bard can also, analyze contents, of a YouTube Video, and give you relevant information, from the content./ Summarize
+•Regenerate Draft
+•Provide Feedback
+•Share/
+•Export to Docs/
+•Draft in Gmail
+•Do Additional Searches on Google G button 
+•Bard has become better by adding Gemini
+•Ultra Model- Bard with Google, Bard Advanced
+•Developer Options for Gemini: ai.google.dev
+•Google Cloud Vertex AI is meant for those using Google Cloud Services, more features, than creating an AI bot
+•Google AI Studio: (previously known as MakerSuite):  Project focused on AI generation, 
+•Google Account, required, Prompts, and answers,
+•So far, only the text version, of Gemini Pro, but if come to the right hand side, choose Gemini Pro Vision, 
+suggest based on images,
+•Upload and add, Gemini is just getting started, but the potential is visible.
+•AI Studio
+•Create New-> Structured Prompt, which can help create better apps, by providing additional examples, 
+Chat prompts allow for a back and forth conversation, 
+but Vision model can't be used for that,
+•Tuned Model-> Include additional data files, right now it's only available with PaLM2 
+•AI Studio, Generate code for you (Get Code), Specify the language you want, Intsall recommended, Safety Settings(Harrasment, Hate Speech, Explicit), 
+•Create API Key-> Generates key to be used on application
+

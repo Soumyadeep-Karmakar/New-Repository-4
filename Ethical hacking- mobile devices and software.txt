@@ -1,0 +1,129 @@
+Ethical hacking- mobile devices and software
+test sites- target
+Tools- malware
+non-intrusive security
+OWASP
+look at threats in mobile devices
+--improper platform threats
+--insecure data storage
+3rd party server, location
+--Insecure communications:
+poor handshaking, incorrect SSL versions, weak negotiation, clear text communication of sensitive assets, secure comm- poor random no. generators
+--insecure authentication: through bad session management 
+--insufficient cryptography: weakness found in MD4 and MD5
+•
+--insecure authorization: 
+--Client code quality: code level problems in mobile client such as buffer overflow, format string vulnerabilities,
+and various other coding mistakes
+--Code tampering: binary patching, local resource modification, method hooking(interception of function calls, system events, messages, code snippets), method swizzling(changing functionality at runtime(selector)), and dynamic memory modifications||
+can be done through, changing contents of memory, changing system APIs, modifying application's data and resources
+--reverse engineering: interesting: if adversary gets hold, of the application, reverse engineers it, more likely to exploit vulnerabilities, rather than reporting them.
+--extraneous functionality: hidden backdoor
+They are not meant to be released to production, just some form of amusement, such as what are known as Easter eggs.
+
+
+OWASP Goals:
+standardization of testing methodologies, 
+secure development, 
+effective testing(static, dynamic, forensic, virtualization vs jailbreaking)
+
+Forensics: identify Weaknesses
+
+Testing Preparation:
+-- Understand the application:
+
+Function, Workflow/Structure
+--Things to prepare for:
+
+Using application, monitoring traffic, Testing and demonstrating flaws
+
+
+After Preparation, first step of testing a mobile application: Static Analysis
+
+--Source code / Disassembly of executable code: 
+Using reverse engineering 
+--Duplicate the runtime environment: 
+--Identify all network interfaces (threats to enter, across cellular, etc.) 
+--Identify networking protocols by application()
+--component interactions
+
+Security model:
+--Access controls- 
+--Sanitization of inbound data
+--User authentication (Features: Account lock out, Single sign on, One time passwords)
+--Authorizations (Permissions for files)
+-- Licensing checks and tamper detection
+
+Static Analysis:
+Risks:
+--Session Management: Processors, particularly if device needs to flush out sensitive information between sessions- both sender and server side should close session properly after completion
+-Misuse of session Id(Otherwise session fixation)
+--Data Sensitivity: Understanding the sensitivity of the data being processed
+
+Data protection 
+12    
+-storage on cloud, sd cards, logs, cache is a risk
+- owasp testing guide is a good start
+
+Issues: Cross-site scripting, HTML Injection, cookies, cross-domain policies
+Two key areas of intereset in Mobile Testing:
+
+Static Analysis:--
+
+-Encryption
+--Random Number Generators
+--Certificate Management
+
+Security feature(Additional): 
+
+-Pinning
+	Application can either implement either
+
+--Certificate pinning
+--Public key pinning
+
+Achieved by checking the presented certificate/public key, against one or more hashes of legitimate certificates, public keys 
+
+Downside: When certificate expires, and is renewed, pinning has to be updated, eg: Google rotates it's certificates regularly, 
+
+Pinning public keys, it much harder, but key rotation isn't much an issue
+
+OWASP Pinning Cheat Sheet
+
+
+Second Stage: -- Dynamic Analysis:
+
+•Focused on looking at what the application does while it's running and what happens, to device Storage between starting and closing the application
+•View of the device's file system, should be obtained, before running
+•Changes reviewed
+•Unexpected connections/Sensitive app data being transmitted(IMEI)isible transmissions
+•Wifi and NFC protocols
+
+•Subverting credential entry
+•Web application testing
+•Edge case testing
+•Session management checks(MITM, Session Fixation)
+
+Requirements and Involvements:
+•Good knowledge of application required
+•Low level Testing
+•Application Hooking
+•Disassembling- Reverse Engineer Source Code
+
+Proxy Web Traffic:
+•Burp Suite
+•To intercept web traffic and inspect web messages, change/insert changes 
+•Proxy tool acts as an intermediary while traffic passes through it
+
+
+Android OS
+•Based on Linux Kernel
+•Runs on ARM Processor
+•Whimsical names
+•Older Version still in use
+•G provides an open-source platform, but individual phone manufacturers, incorporate proprietary extensions within their deployments
+•Android does not introduce a new security model, but build on the Linux security model with enhancements, appropriate, to the mobile environment
+•One of the main changes is making security, application centric, rather than user-centric
+
+Android Architecture:
+•Hardware Platform

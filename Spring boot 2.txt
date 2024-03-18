@@ -1,0 +1,78 @@
+Spring Boot Starter Parent:
+It is a project starter. It provides default configurations for our apps. Used internally by all dependencies. All SB projects use spring-boot-starter-parent as a parent in pom.xml file.
+
+<parent>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-parent</artifactId>
+<version>1.4.0.RELEASE</version>
+</parent>
+
+Spring Boot Starter Web:
+2 features:
+Compatible for web dev
+Auto configuration
+
+If we want to develop a web app, we need to add the following dpendency in pom.xml:
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-web</artifactId>
+<version>2.2.2.RELEASE</version>
+</dependency>
+
+Starter of Spring web uses Spring MVC, REST and Tomcat as a default embedded server. It transitively pulls in all dependencies related to web dev. Reduces the build dependency count. 
+
+Spring Boot Embedded Web Server:
+Jetty/Tomcat/Undertow
+
+Using another embedded web server:
+For servlet stack apps, the spring-boot-starter-web includes Tomcat by including spring-boot-starter-tomcat but other 2 can be used as well.
+
+For reactive stack, spring-boot-starter-webflux includes Reactor Netty by including spring-boot-starter-reactor-netty by other 3 can be used as well. 
+
+Jetty: HTTP server and Servlet container that has the capability of serving static and dynamic content. Used when machine to machine communication is required.
+To add jetty server, we need to add the spring-boot-starter-jetty dependency in pom.xml.
+Note: While using jetty, exclude tomcat from spring-boot-starter-web.
+
+Undertow Server:
+Embedded web server like Jetty. Written in java and sponsored by JBoss. 
+
+spring-boot-starter-web vs spring-boot-starter-tomcat:
+spring-boot-starter-web contains the following:
+spring-boot-starter, jackson, spring-core, spring-mvc, spring-boot-starter-tomcat
+
+spring-boot-starter-tomcat contains:
+core, el, logging, websocket
+
+We can also use spring-mvc without using the embedded Tomcat server. For that we need to use the <exclusion> tag. 
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-web</artifactId>
+<exclusions>
+<exclusion>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-tomcat</artifactId>
+</exclusion>
+</exclusions>
+</dependency>
+
+Spring Data JPA:
+High level Spring source project. 
+
+Purpose-> Unify and easy access to the different kinds of persistence stores, both relational dbms and nosql data stores.
+
+When we implement a new app, we should focus on the business logic instead of technical complexity and boilerplate code. That's why the JPA specification and Spring Data JPA are extremely popular.
+
+Spring data JPA adds a layer on top of JPA. Retains all features by JPA, 
+entity, association mappings & JPA's query capabilities. 
+
+It adds its own features such as the 
+no-code implementation of the repository pattern & creation of database queries from the method name.
+
+Spring Data JPA:
+Handles most of the complexity of JDBC based database access and ORM(Object Relational Mapping). Reduces the boilerplate code required by JPA. 
+Makes the implementation of the persistence layer easier and faster.
+
+3 main features of JPA:
+No-code repository: Most popular persistence related pattern. Enables us to implement our business code on a higher abstraction level.
+Reduced Boilerplate Code: Provides the default implementation for each method by its repository interfaces. 
