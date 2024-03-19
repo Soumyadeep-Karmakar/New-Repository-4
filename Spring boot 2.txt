@@ -1,3 +1,351 @@
+Spring Boot is a project built on top of the Spring Framework. Easier and faster way to setup, configure and run both simple and web based applications.
+It is a Spring module that provides the RAD: Rapid Application Development feature to the Spring Framework. Used to create stand-alone Spring based application that you can just run because it needs minimal Spring configuration.
+
+Spring framework + Embedded HTTP Servers(Tomcat, Jetty) - XML <bean> Configuration or @Configuration = Spring Boot
+
+In short Spring Boot is the combination of Spring framework and Embedded Servers.
+Here, there is no requirement for XML configuration (deployment descriptor). It uses convention over configuration software design paradigm.
+We can use Spring STS IDE or Spring Initializr to develop Spring Boot Java Applications.
+
+Why use Spring Boot:
+DI approach is used 
+Powerful DB Transaction Management Capabilities.
+Simplifies Integration with other Java Frameworks like JPA/Hibernate ORM, Struts, etc.
+Reduces cost and development time of the application.
+
+Sister Spring projects:
+Spring Data: Siplifies data access from relational and NoSQL databases.
+Spring Batch: Powerful batch processing.
+Spring Security: Robust Security to applications.
+Spring Social: Integration with social networking sites like Linkedin.
+Spring Integration: Facilitates integration with other enterprise apps using lightweight messaging and declarative adapters.
+
+Advantages of Spring Boot:
+It creates stand-alone Spring applications that can be started using Java -jar.
+Creates web apps easily using embedded HTTP servers such as Tomcat, Jetty, etc. We don't need to deploy WAR files.
+Provides Opinionated 'starter' POMs to simplify Maven configuration.
+Production ready features: metrics, health checks, externalized configuration.
+No requirement for XML configuration.
+Offers a CLI tool for developing and testing the app.
+Minimizes writing boilerplate codes.
+
+SpringApplication:
+Started from main method.
+public static void main(String[] args){
+    SpringApplication.run(ClassName.class, args);
+}
+
+Class annotated with @ConfigurationProperties annotation is tobe immutable. It can be enabled by adding the annotation to class or one of its constructors with @ConstructorBinding.
+
+Spring vs Spring Boot vs Spring MVC:
+
+Spring is the most popular app development framework. Main feature: DI or IOC. We can develop a loosely coupled app with the help of Spring. Better to use if app characteristics or type are purely defined.
+apps.
+Primary feature: DI
+loosely coupled
+lot of boilerplate code
+set up server
+no support for in memory database
+manually define dependencies in pom.xml
+
+Spring Boot: Module of Spring framework. Allows us to build stand alone application with minimal or zero configurations. Better to use if we want to develop a simple Spring based app or RESTful services.
+build rest apis
+web apps, shorten code
+Autoconfiguration: Automatically configures the classes based on the requirement.
+stand alone apps
+reduces boilerplate code
+embedded server: jetty, tomcat
+embedded and in memory database: H2
+concept of starter in pm.xml that internally takes care of downloading the dependencies JARs based on Spring Boot Requirement.
+
+Spring Boot vs Spring MVC:
+
+Spring Boot: Makes it easy to quickly bootstrap and start developing a Spring based app. Avoids a lot of boilerplate code. 
+
+Spring MVC: Web MVC framework for building web apps. Contains a lot of .conf files for various capabilities. HTTP oriented web app development framework. 
+
+Spring Boot Architecture: 
+4 layers:
+Presentation Layer: Authentication, JSON Translation
+Business Layer: Business Logic, Validation, Authorization
+Persistence Layer: Storage Logic
+Database: Actual database
+
+Presentation Layer: Handles the HTTP requests, translates JSON parameter to object, authenticates the request and transfers it to the business layer. Consists of views: frontend part.
+Business Layer: Consiste of Service classes and user services provided by data access layers. Performs authorization and validation.
+Persistence Layer: Contains all storage logic and translates business objects to and from database rows.
+Database: CRUD operations are performed.
+
+Spring Boot Flow Architecture:
+                                          <-Dependency Injection-> Repository Class Extending CRUD Services
+Client<-HTTPS request->Controller<->Service Layer<->Model -JPA/Spring Data> Database--------------|
+
+Now we have validator, view and utility classes.
+Spring Boot uses all modules of Spring like Spring MVC, Spring Data etc. Architecture= same as that of Spring MVC except one thing- no need for DAO and DAOImpl classes in Spring Boot.
+Creates a data access layer and performs CRUD operation.
+Client makes HTTP requests(PUT or GET).
+Request goes to the controller and the controller maps that request and handles it. After that it calls the service logic if required. 
+In the service layer, all the business logic is performed. It performs the logic on the data that is mapped to JPA with model classes.
+A JSP page is returned to the user ifno error occurs.
+
+Spring Initializr:
+Web based tool provided by the Pivotal Web Service. Generate structure of the Spring Boot Project. Offers extensible API for creating JVM-based projects.
+
+Generating a Project: Kind of project. Maven/Gradle
+Language: Java/Kotlin/Groovy
+Spring Boot: Version
+Project Metadata: Group, Artifact, Group denotes package name, Artifact: application name
+Dependencies
+
+Generate: Jar/War file downloaded
+
+Note:
+A single @SpringBootApplication is used to enable the following annotations:
+@EnableAutoConfiguration: Enables boot auto conf mechanism.
+@ComponentScan: Scans the package where the app is located.
+@Configuration: Register extra beans in the context or import additional conf classes.
+
+Spring Boot Annotations:
+Metadata that provides data about a program. 
+Core Spring Framework Annotations:
+@Required: Applies to bean setter method. 
+public class Machine{
+    private Integer cost;
+    @Required
+    public void setCost(Integer cost){
+        this.cost=cost;
+    }
+    public Integer getCost(){
+        return cost;    
+    }
+}
+Indicates that the annotated bean must be populated at conf time with the required property, else it throws an BeanInitializationException.
+
+@Autowired: Spring provides annotation-based auto-wiring by providing @Autowired annotation. When we use the annotation, spring container auto-wires the bean by the matching data-type. Used to autowire spring bean on setter methods, instance variable and constructor.
+
+@ComponentScan
+public class Customer{
+    private Person person;
+    @Autowired
+    public Customer(Person person){
+        this.person=person;
+    }
+}
+
+@Configuration: Class-level annotation. Class annotated with @Configuration used by Spring Containers as a source of bean definitions.
+@Configuration
+public class Vehicle{
+    @BeanVehicle engine(){
+        return new Vehicle();
+    }
+}
+
+@ComponentScan: Used when we want to scan a package for beans. 
+Used with the annotation @Configuration. We can also specify the base packages to scan for Spring Components.
+
+@ComponentScan(basePackages="com.javatpoint")
+@Configuration
+public class ScanComponent{
+
+}
+
+@Bean: Method-level annotation. Alternative of XML <bean> tag. Tells the method to produce a bean to be managed by Spring Container.
+
+@Bean
+public BeanExample beanExample(){
+    return new BeanExample();
+}
+
+Spring Framework Stereotype Annotations:
+
+@Component: Class level annotation. 
+Used to mark a Java class as a bean. 
+A java class annotated with @Component is found during the classpath. The Spring framework picks it up and configures it in the application context as a Spring bean.
+
+@Component
+public class Student{
+
+}
+
+@Controller: Class level. Specialization of @Component. Marks a class as  web request handler. Used to serve web pages. Returns a string that indicates which route to redirect. Mostly used with @RequestMapping annotation.
+
+@Controller
+@RequestMapping("books")
+public class BooksController{
+    @RequestMapping(value= "/{name}", method= RequestMethod.GET)
+    public Employee getBooksByName(){
+        return booksTemplate;
+    }
+}
+
+@Service: Class level. Tells Spring that the class contains the business logic.
+
+package com.javatpoint;
+@Service
+public class TestService{
+    public void service1(){
+
+    }
+}
+
+@Repository: Class level. Repository is a DAO(Data Access Object) that access the database directly. Repository does all the operations related to the database.
+
+package com.javatpoint;
+@Repository
+public class TestRepository{
+    public void delete(){
+
+    }
+}
+
+Spring Boot Annotations:
+
+@EnableAutoConfiguration: Auto configures the bean that is present in the classpath and configures it to run the methods.
+@SpringBootApplication: Combination of @EnableAutoConfiguration, @ComponentScan, @Configuration
+
+Spring MVC and REST Annotations:
+@RequestMapping: Map the web requests
+Has many optional elements like consumes, header, method, name, params, path, produces and value. 
+
+@Controller
+public class BooksController{
+    @RequestMapping("/computer-science/books")
+    public String getAllBooks(Model model){
+        return "bookList";
+    }
+}
+
+@GetMapping: Maps the HTTP GET requests on the specific handler method. Used to create a web service endpoint that fetches. Used instead of using: @RequestMapping(method=RequestMethod.GET)
+
+@PostMapping: Maps the HTTP POST requests on the specific handler method. Used to create a web service endpoint that creates. Used instead of using: @RequestMapping(method= RequestMethod.POST)
+
+@PutMapping: Maps the HTTP PUT requests on the specific handler method. Creates/updates. Used instead of @RequestMapping(method=RequestMethod.PUT)
+
+@DeleteMapping: Maps the HTTP DELETE requests on the specific handler. Deletes a resource. ...
+
+@PatchMapping: Maps the HTTP PATCH requests on the specific handler method.
+
+@RequestBody: Used to bind HTTP request with an object in a method parameter. Internally it uses HTTP MessageConverters to convert the body of the request. 
+When we annotate a method parameter with @RequestBody, the Spring framework binds the incoming HTTP request body to that parameter.
+
+@ResponseBody: Binds the method return value to the response body. It tells the Spring boot framework to serialize  a return object into JSON and XML format. 
+
+@PathVariable: Extract values from the url. useful for restful web service. 
+
+@RequestParam: Used to extract the query parameters from the URL. Also known as a query parameter. 
+
+@RequestHeader: Details about the HTTP request headers. 
+
+@RestController: Combination of @Controller and @ResponseBody annotations.
+
+@RequestAttribute: 
+
+Spring Boot Dependency Management:
+
+Spring Boot Application Properties:
+
+SBF comes with a built in mechanism for app configuration using a file called application.properties.
+Located inside src/main/resources folder.
+
+SB provides various properties that can be configured here. The properties have default values. 
+The file allows us to run an application in a different env. 
+
+eg:
+spring.application.name= demoApplication
+server.port= 8081
+
+YAML properties file:
+SB provides another file to configure the properties called yml file. The yaml file works because the snake yaml jar is present in the classpath. Instead of using the properties file, we can also use the application.yml file but the Yml file should be present in the classpath.
+
+eg:
+spring:
+application:
+name: demoApplication
+server:
+port: 8081
+
+Spring Boot Property Categories: 16 Categories
+Core, Cache, Mail, JSON, Data, Transaction, Data Migration, Integration, Web, Templating, Server, Security, RSocket, Actuator, DevTools, testing
+
+Property, default, description
+
+Debug    false     Enables debug logs.
+spring.application.name    Set the application name
+spring.application.admin.enabled     false    Enable admin features of the application
+spring.config.name     application    Set config file name
+spring.config.location     Used to config the file name
+server.port    8080      Configures the HTTP server port
+server.servlet.context-path    Configures the context path of the application
+logging.file.path, Configures the location of the log file.
+spring.banner.charset   UTF-8   Banner file encoding
+spring.banner.location      classpath:banner.txt    Used to set banner file location
+logging.file    Used to set log file name, eg: data.log
+spring.application.index        Used to set application index
+spring.application.name     Used to set the application name
+spring.application.admin.enabled    false   Used to enable admin features of the application.
+spring.config.location      Used to config the file locations
+spring.config.name      application     Set config file name
+spring.config.location		It is used to config the file name.
+server.port	8080	Configures the HTTP server port
+server.servlet.context-path		It configures the context path of the application.
+logging.file.path		It configures the location of the log file.
+spring.banner.charset	UTF-8	Banner file encoding.
+spring.banner.location	classpath:banner.txt	It is used to set banner file location.
+logging.file		It is used to set log file name. For example, data.log.
+spring.application.index		It is used to set application index.
+spring.application.name		It is used to set the application name.
+spring.application.admin.enabled	false	It is used to enable admin features for the application.
+spring.config.location		It is used to config the file locations.
+spring.config.name	application	It is used to set config the file name.
+spring.mail.default-encoding	UTF-8	It is used to set default MimeMessage encoding.
+spring.mail.host		It is used to set SMTP server host. For example, smtp.example.com.
+spring.mail.password		It is used to set login password of the SMTP server.
+spring.mail.port		It is used to set SMTP server port.
+spring.mail.test-connection	false	It is used to test that the mail server is available on startup.
+spring.mail.username		It is used to set login user of the SMTP server.
+spring.main.sources		It is used to set sources for the application.
+server.address		It is used to set network address to which the server should bind to.
+server.connection-timeout		It is used to set time in milliseconds that connectors will wait for another HTTP request before closing the connection.
+server.context-path		It is used to set context path of the application.
+server.port	8080	It is used to set HTTP port.
+server.server-header		It is used for the Server response header (no header is sent if empty)
+server.servlet-path	/	It is used to set path of the main dispatcher servlet
+server.ssl.enabled		It is used to enable SSL support.
+spring.http.multipart.enabled	True	It is used to enable support of multi-part uploads.
+spring.servlet.multipart.max-file-size	1MB	It is used to set max file size.
+spring.mvc.async.request-timeout		It is used to set time in milliseconds.
+spring.mvc.date-format		It is used to set date format. For example, dd/MM/yyyy.
+spring.mvc.locale		It is used to set locale for the application.
+spring.social.facebook.app-id		It is used to set application's Facebook App ID.
+spring.social.linkedin.app-id		It is used to set application's LinkedIn App ID.
+spring.social.twitter.app-id		It is used to set application's Twitter App ID.
+security.basic.authorize-mode	role	It is used to set security authorize mode to apply.
+security.basic.enabled	true	It is used to enable basic authentication.
+Spring.test.database.replace	any	Type of existing DataSource to replace.
+Spring.test.mockmvc.print	default	MVC Print option
+spring.freemaker.content-type	text/html	Content Type value
+server.server-header		Value to use for the server response header.
+spring.security.filter.dispatcher-type	async, error, request	Security filter chain dispatcher types.
+spring.security.filter.order	-100	Security filter chain order.
+spring.security.oauth2.client.registration.*		OAuth client registrations.
+spring.security.oauth2.client.provider.*		OAuth provider details.
+
+Spring Boot Starters: Provides a number of starters that allow us to add jars in the classpath. Spring boot built-in starters make development easier and rapid. They are the dependency descriptors.
+In SB framework, all the starters follow a similar naming pattern: spring-boot-starter-* where * denotes a particuar type of application. eg: If we want to use spring and jpa for database access we need to include the spring-boot-starter-data-jpa dependency in our pom.xml file of the project.
+
+Third Party Starters: We can also include third party starters in our project, but we do not use spring-boot-starter for including third party dependency. It is reserved for official sb artifacts. the 3rd party starter starts with the name of the project. eg: abc-spring-boot-starter
+
+Some SBF app starters under the org.springframework.boot group are:
+spring-boot-starter-thymeleaf: Build MVC web apps using Thymeleaf views
+spring-boot-starter-data-web-services: For Spring web services
+
+SB Production Starters:
+spring-boot-starter-actuator: Provides production-ready features to help monitor and manage app.
+
+SB Technical Starters:
+spring-boot-starter-tomcat: Tomcat as embedded servlet container. Default servlet container starter used by spring-boot-starter-web.
+spring-boot-starter-log4j2: Used for logging. alternative to spring-boot-starter-logging. 
+
 Spring Boot Starter Parent:
 It is a project starter. It provides default configurations for our apps. Used internally by all dependencies. All SB projects use spring-boot-starter-parent as a parent in pom.xml file.
 
