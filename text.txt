@@ -1,0 +1,6 @@
+Free Resources for AWS CLF-02 Exam
+AWS Certified Cloud Practitioner Exam Guide: https:// aws.amazon.com/certification/certified-cloud-practitioner/
+AWS Educate: https://aws.amazon.com/education/ awseducate/
+AWS re:Post: https://repost.aws
+AWS Collective: https://stackoverflow.com/collectives/aws
+AWS User Groups: https://aws.amazon.com/developer/
