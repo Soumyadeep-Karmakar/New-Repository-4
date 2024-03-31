@@ -1,0 +1,207 @@
+Docker
+
+Docker is a container management service.
+keywords 
+develop, ship and run 
+whole idea
+developers to easily develop applications, ship them into containers which can then be deployed anywhere.
+Features of Docker
+
+reduce the size of development by providing a smaller footprint of the operating system via containers.
+With containers, it becomes easier for teams across different units, such as development, QA and Operations to work seamlessly across applications.
+You can deploy Docker containers anywhere, on any physical and virtual machines and even on the cloud.
+Since Docker containers are pretty lightweight, they are very easily scalable.
+Docker has the following components
+
+
+Docker for
+Mac
+Linux
+Windows 
+Docker Engine
+used for building Docker images and creating Docker containers.
+Docker Hub
+registry which is used to host various Docker images.
+Docker Compose
+define applications using multiple Docker containers.
+Docker - Images
+
+In Docker, everything is based on Images. 
+An image is a combination of a file system and parameters.
+
+Let’s take an example of the following command in Docker.
+
+docker run hello-world 
+The Docker command is specific and tells the Docker program on the Operating System that something needs to be done.
+The run command is used to mention that we want to create an instance of an image, which is then called a container.
+Finally, "hello-world" represents the image from which the container is made.
+
+Now let’s look at how we can use the CentOS image available in Docker Hub to run CentOS on our Ubuntu machine. We can do this by executing the following command on our Ubuntu machine −
+sudo docker run -it centos /bin/bash
+
+We are using the sudo command to ensure that it runs with root access.
+Here, centos is the name of the image we want to download from Docker Hub and install on our Ubuntu machine.
+─it is used to mention that we want to run in interactive mode.
+/bin/bash is used to run the bash shell once CentOS is up and running.
+
+https://www.tutorialspoint.com/docker/images/displaying_docker_images.jpg
+
+TAG − This is used to logically tag images.
+Image ID − This is used to uniquely identify the image.
+Created − The number of days since the image was created.
+Virtual Size − The size of the image.
+
+Images can be downloaded from Docker Hub using the Docker run command. Let’s see in detail how we can do this.
+docker run image 
+Image − This is the name of the image which is used to run the container.
+sudo docker run centos
+
+This command will download the centos image, if it is not already present, and run the OS as a container.
+https://www.tutorialspoint.com/docker/images/downloading_docker_images.jpg
+
+You will now see the CentOS Docker image downloaded. Now, if we run the Docker images command to see the list of images on the system, we should be able to see the centos image as well.
+
+
+https://www.tutorialspoint.com/docker/images/centos.jpg
+Removing Docker Images
+
+docker rmi
+
+docker rmi ImageID
+
+ImageID − This is the ID of the image which needs to be removed.
+
+
+sudo docker rmi 7a86f8ffcb25 
+
+https://www.tutorialspoint.com/docker/images/removing_docker_images.jpg
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
