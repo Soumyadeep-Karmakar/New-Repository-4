@@ -1,4 +1,4 @@
-Docker
+Docker 
 
 Docker is a container management service.
 keywords 
@@ -61,141 +61,87 @@ https://www.tutorialspoint.com/docker/images/downloading_docker_images.jpg
 
 You will now see the CentOS Docker image downloaded. Now, if we run the Docker images command to see the list of images on the system, we should be able to see the centos image as well.
 
-
 https://www.tutorialspoint.com/docker/images/centos.jpg
 Removing Docker Images
-
 docker rmi
-
 docker rmi ImageID
-
 ImageID − This is the ID of the image which needs to be removed.
-
-
 sudo docker rmi 7a86f8ffcb25 
 
 https://www.tutorialspoint.com/docker/images/removing_docker_images.jpg
 
+docker images -q:
+This command is used to return only the Image ID’s of the images.
+q − It tells the Docker command to return the Image ID’s only.
+sudo docker images -q 
+https://www.tutorialspoint.com/docker/images/docker_images_q.jpg
+
+docker inspect
+details of an image or container.
+docker inspect Repository 
+Repository − This is the name of the Image.
+sudo docker inspect jenkins 
+https://www.tutorialspoint.com/docker/images/docker_inspect.jpg
+
+Docker - Containers
+Containers are instances of Docker images that can be run using the Docker run command. 
+The basic purpose of Docker is to run containers. 
+
+Running a Container
+Running of containers is managed with the Docker run command.
+To run a container in an interactive mode, first launch the Docker container.
+sudo docker run –it centos /bin/bash
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Ctrl+p and you will return to your OS shell.
+You will then be running in the instance of the CentOS system on the Ubuntu server.
+
+Listing of Containers:
+docker ps
+sudo docker ps
+https://www.tutorialspoint.com/docker/images/listing_of_containers.jpg
+
+some more variations of the docker ps command
+docker ps -a
+─a − It tells the docker ps command to list all of the containers on the system.
+sudo docker ps -a 
+https://www.tutorialspoint.com/docker/images/docker_ps_a.jpg
+
+docker history
+With this command, you can see all the commands that were run with an image via a container.
+docker history ImageID 
+ImageID − This is the Image ID for which you want to see all the commands that were run against it.
+sudo docker history centos
+The above command will show all the commands that were run against the centos image.
+
+https://www.tutorialspoint.com/docker/images/docker_history.jpg
+
+Docker - Working with Containers
+docker top
+docker top ContainerID 
+ContainerID − This is the Container ID for which you want to see the top processes.
+The output will show the top-level processes within a container.
+sudo docker top 9f215ed0b0d3 
+
+https://www.tutorialspoint.com/docker/images/docker_top.jpg
+
+docker stop
+This command is used to stop a running container.
+docker stop ContainerID 
+sudo docker stop 9f215ed0b0d3 
+https://www.tutorialspoint.com/docker/images/docker_stop.jpg
+
+docker rm
+docker rm ContainerID 
+The output will give the ID of the removed container.
+sudo docker rm 9f215ed0b0d3 
+https://www.tutorialspoint.com/docker/images/docker_rm.jpg
+
+docker stats
+provide the statistics of a running container.
+docker stats ContainerID 
+sudo docker stats 9f215ed0b0d3 
+The output will show the CPU and Memory utilization of the Container.
+https://www.tutorialspoint.com/docker/images/docker_stats.jpg
 
 
 
