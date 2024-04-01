@@ -143,11 +143,31 @@ sudo docker stats 9f215ed0b0d3
 The output will show the CPU and Memory utilization of the Container.
 https://www.tutorialspoint.com/docker/images/docker_stats.jpg
 
+docker attach
+used to attach to a running container.
+docker attach ContainerID 
+sudo docker attach 07b0b6f434fe 
+The above command will attach to the Docker container 07b0b6f434fe.
+https://www.tutorialspoint.com/docker/images/docker_attach.jpg
+https://www.tutorialspoint.com/docker/images/docker_attach_container.jpg
 
+docker pause
+pause the processes in a running container.
+docker pause ContainerID 
+sudo docker pause 07b0b6f434fe 
 
+docker unpause ContainerID
 
+sudo docker kill 07b0b6f434fe 
+The above command will kill the processes in the running container 07b0b6f434fe.
+https://www.tutorialspoint.com/docker/images/docker_kill.jpg
 
+Docker – Container Lifecycle
+Created-Running<>Paused<>Stopped-Killed
+Initially, the Docker container will be in the created state.
 
-
-
-
+Then the Docker container goes into the running state when the Docker run command is used.
+The Docker kill command is used to kill an existing Docker container.
+The Docker pause command is used to pause an existing Docker container.
+The Docker stop command is used to pause an existing Docker container.
+The Docker run command is used to put a container back from a stopped state to a running state.
