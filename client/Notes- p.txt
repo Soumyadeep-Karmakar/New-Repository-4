@@ -1,0 +1,199 @@
+-cd ANPR
+-clone repo
+-create virtual environment: python -m venv anprsys
+-activate virtual env:  .\anprsys\Scripts\activate
+-upgrade pip, install ipykernel(leverage venv inside jn),
+ https://github.com/nicknochnack/TFODCourse
+python -m pip install --upgrade pip; pip install ipykernel
+-make sure working in anprsys kernel
+-First block sets up Tensorflow folder structure
+-Using a pretrained state of the art model and fine tuning that
+particular model on our specific use case- transfer learning
+
+-B1: clone pre-trained tf model and install tf od api
+-install w-get to get pt models
+-clone tf model garden from 'github.com/tensorflow/models'
+-see model inside 'ANPR\Tensorflow\models' | '\research\object_detection'
+--install tf od depending on windows/linux machine
+ANPR\anprsys\Lib\site-packages   download
+install tf od api 
+-run verification script
+--import object_detection , download pre trained model
+wget, move to path, cd
+-check 'ANPR\Tensorflow\workspace\pre-trained-models'
+//installation done
+
+Working with data:
+-download images from kaggle.com/andrewmvd/car-plate-detection
+-extract, separate into train, test, contains annotations and
+images, transfer into 'ANPR\Tensorflow\workspace\images'
+-annotation(xml) - folder name, file name, size/dimension,
+ segmented, object name(licence), bndbox(licence part in image)
+required to create tf records
+
+Training OD model:
+-Update labels | Create TF records | Prepare configuration| Train
+-One label which is licence
+-TF Records are the file format the object detection model 
+requires the data to be in
+
+-B2: create label map (one label-licence)
+A label map represents all the possible objects the model can
+detect. Here there's one object, licence, that we will detect.
+-Check in 'ANPR\Tensorflow\workspace\annotations' | label_map
+
+-B3: create TF record
+generate_tfrecord.py is going to convert all data from its raw 
+format in this case our images and annotations and convert it 
+to a tf record format
+-clone the generatetfrecord repo, slight change required because
+of different format of our annotation
+-'ANPR\Tensorflow\scripts'
+-modify 'generatetfrecord.py' and change parameter from 4 to 
+5 so that it looks for bndbox in object 5
+--created TF record file for train,test
+-check in 'ANPR\Tensorflow\workspace\annotations' | label_map,test,train
+
+-B4: Copy Model Config to Training Folder
+copy our pre-trained model configuration for pre-trained 
+files to our training folder  
+-check 'ANPR\Tensorflow\workspace\pre-trained-models\long_folder
+pipeline.config | contains all details about pre-trained model
+-we need to change a bunch of parameters in this file in order
+to be able to train this model; done within jupyter notebook
+-B4 copies the config file to 'ANPR\Tensorflow\workspace\models\my_ssd_mobnet'
+
+-B5: Update config for Transfer Learning
+Updates all parameters inside pipeline.config
+
+-B6: Train the model
+-First cell- creates training command, steps=5000
+-print command; run in cmd
+-activate virtual environment ; D:\ANPR> .\anprsys\Scripts\activate
+inside ANPR directory
+--errors: 7
+//Step 100 per-step time 0.6s loss=1.024
+-check 'ANPR\Tensorflow\workspace\models\my_ssd_mobnet'
+checkpoints
+
+-Detecting Plates in Real Time
+-B8: Load Model from Checkpoint
+-change checkpoint to 'ckpt-8'
+-load model into jupyter notebook
+
+-B9: Detect from Image
+-3rd cell big one performs detection
+-leverage this od model , performs better than leveraging 
+traditional computer vision methods
+
+Applying OCR- Easy OCR(runs on Pytorch)
+-
+//0th block , B2, B5:2nd line(config), B8
+
+-detection_threshold=0.7(accuracy)
+-ROI- region of interest
+--apply ROI filtering and OCR 
+-easyocr.reader(['en']); reader.readText(region)
+//if multiple lines of text, filter
+//apply filtering to get main text based on size
+Grab region with score greater than detection_threshold
+detections['detection-scores'] > d_threshold
+boxes, classes
+Region_of_Interest_ROI= box_coordinates*[h,w,h,w](dimensions of the image)
+box(represents coordinates of image without respect to actual image size)
+
+
+OCR Filtering
+To remove extra text
+filter_text();
+-region_threshold=0.6
+-grabbing height and width
+-for result in ocr_result:
+if that particular region passes the region threshold then show
+-
+extract each region widths from coordinates returned by ocr_result:
+widths of BG 02 QT, new, south, wales
+filter regions from above with area greater than region_threshold
+if (length*height of 1st element(BG 02 QT) / whole rectangle area(number plate)) > region_threshold
+plate.append(element(BG 02 QT))
+If region_threshold is set lower(0.05) more text(plate along with new, south)
+
+
+Bring it Together: ocr_it()
+Compile previous 2 sections into 1 function
+
+Save Results:
+Save region, plate:
+-real time ocr_it() and save_results() B10
+
+
+pipeline.config inside ssd_mobnet
+parameters: label_map_path: PATH_TO_BE_CONFIGURED 
+
+Evaluation:
+Activate venv : .\anprsys\Scripts\activate
+cd C:\Users\ADMIN\ANPR\Tensorflow\workspace\models\my_ssd_mobnet\train
+tensorboard --logdir=.
+
+Performance metrics:
+C:\Users\ADMIN\ANPR\Tensorflow\workspace\models\my_ssd_mobnet\eval
+tensorboard --logdir=.
+
+accuracy
+kaggle 
+tensorflow 
+transfer learning 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+abstract, proposed algo, 
+ml, dl, knn vs k-means  other people, implementation,
+same document, other people question, rw
+presentation- seeing presentation questions will be asked
+according to slides
+intro, related- same as project report
+formal
+epoch
+
+25:19 34:40(data) 43:04(B2) 55:10(Train) 1:20:00 (OCR) 1:31:00(OCR text)
+loss=0.5
+
+region_threshold=0.6                        if length*height of required region / whole rectangle size(number plate) > region_threshold   pass
+
+Restart Kernel: 1:10:10, 
+
+Restart cell: 1,2,3,4, label map(s2), config(s5:2), 
+Load Train Model from Checkpoint(s8:3), Detect from an image
+(s9:All), Apply OCR to Detection(All), OCR Filtering(All),
+Bring it Together(All), 
+
+Activate, Download libraries: 53:4
+411,425
+
+
+
+Working: 411, 412, 420, 423, 426, 428, 432, 
+Not working : 425, 413, 415, 417,421,424,429(not dlp), 
+418, 422, 427, 430, 431, 
+Blurry: 414, 416(extra char), 419,ctest2(rr)
+
+
+
+
+dlp- detecting licence plate, rr- reasonably right

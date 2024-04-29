@@ -1,0 +1,729 @@
+Reverse a Linked List:
+1 2 3 4 5  
+
+Functions:
+queue.size(); queue.poll();  array.length;  string.length(); string.isEmpty();
+Integer.MAX_VALUE;  Integer.MIN_VALUE; 
+Arrays.sort(tarr, (a,b)-> (b.pId - a.pId));
+tarr=Arrays.copyOf(tarr, tarr.length+1);
+Integer.ValueOf(stringab); stoi(abc); //to int |  String.valueOf(intab); //to string
+Integer.toString(inta); //int to string|  Character.toString(ch);
+int[] arr= new int[5]; //Array definition or Integer res[]= new Integer[10];
+boolean fFacility;
+Word.toCharArray(); (word-String) word.charAt(index);
+str.substring(i,j+1);  //last n digits of an integer
+String singleString = sb.toString();//stringbuilder (sb) to string
+HashSet<Integer> a = new HashSet<>(); a.add(d); if(a.contains(d));
+boolean t;
+if(s.equals(sb.reverse().toString()) ) //equality in strings
+str.length(); str.toCharArray().length;
+ArrayList<Integer> list= new ArrayList<>();
+if(Character.isDigit(sub.charAt(0)))
+	if(!sub.contains("9"))
+		list.add(Integer.valueOf(sub));
+Collections.sort(list,Collections.reverseOrder());
+System.out.println(list.get(0));
+Take character input: char ch=sc.next().charAt(0);
+String s3=s1.concat(s2); or s3=s1+""+s2+s4; or String s=(new StringBuilder()).append("Sachin").append(" Tendulkar).toString();  
+System.exit(0);
+Arrays.sort(arr,Collections.reverseOrder());
+sum+= Character.getNumericValue(str.charAt(j)); //numeric value of character
+Integer.valueOf(str.charAt(j)); //prints ASCII value of character
+
+
+new Node[26]; new Node(ch);//value initialized
+min heap- k times- k log(n);
+Math.abs(); 
+Arrays.fill(row,-1); Arrays.sort(indices,(a,b)->queries[a]-queries[b]);//wrt queries ; sort wrt to other array
+ans.get(i).set(j,ans.get(i-1).get(j-1)+ans.get(i-1).get(j));
+asList(ans); //Boyre-Moore Algorithm
+Heap- add/remove: log(n); max/min: O(1);
+import java.util.*; 
+Scanner sc= new Scanner(System.in);
+String input= sc.nextLine();
+Class_Name[] arr= new Class_Name[n]; //array of objects
+arr[i]=new Class_Name(a,b,c,d); //creating and initializing objects
+
+
+//String s="200"; int i=Integer.valueOf(s); int i=Integer.parseInt(s); reverse()
+var res;//adjusts to the datatype
+
+Integer.compare(a,b); 0 a==b, >0 a>b, <0 a<b 
+Integer.toBinaryString(a); Integer.bitCount(n);//returns no. of 1's in n
+
+
+
+if(Character.isLetter(ch))
+String data;  String[] tokens=data.split(",");  //argument String
+String.join(",",list); //join list with commas
+//equals(Object another) isEmpty() concat(String str) 
+//equalsIgnoreCase(String another) indexOf(int ch) toLowerCase()
+//toUpperCase() String.valueOf(int value) pat.equals(endWord)
+if(playername.equals(""))
+String s=""; //String has to be initialized
+String s1="hello";  
+char[] ch=s1.toCharArray();  
+String s = s1.toLowerCase();
+if(varr.contains(Character.toString(ch)))
+fstr.concat(Character.toString(ch));
+
+
+eg-:
+String varr= "aeiou";
+for(char ch: input.toCharArray())
+	if(varr.contains(Character.toString(ch))) {
+		System.out.println(ch);
+		break;
+	}
+
+
+Range of int type in Java -> -2147483648 to 2147483647.  32 bits
+Arrays int in java are initialized to 0, boolean arrays to false, string arrays to null
+If sc.nextLine() done after array int input array elements have to entered 
+in newline otherwise space separated elements can be entered.
+*Cannot make a static reference to the non-static method check_r(int) from the type Numbers_with_fn_name, i.e.
+User defined functions in java either jave to be defined in another class and called through a object 
+or has to be declared static in main class if called through main function
+
+import java.math.BigInteger;
+BigInteger c = new BigInteger("52498235605326345645");
+BigInteger a = b.multiply(c);
+
+
+StringBuilder string= new StringBuilder(word);
+Character.toString(ch)
+  string.setCharAt(i,'*'); sb.reverse().toString();
+//string.append(String s)  insert(int offset, String s)
+//replace(int startIndex, int endIndex, String str) reverse()
+//capacity() delete(int startIndex, int endIndex) charAt(int index)
+//length() substring(int beginIndex) substring(int beginIndex, int endIndex)
+or
+Scanner sc= new Scanner(System.in);
+String s=sc.nextLine();
+	StringBuilder inputc= new StringBuilder();
+inputc.append(s);
+System.out.println(inputc.reverse());
+String singleString = inputc.toString();
+
+
+
+Deque<Integer> q= new LinkedList<>(); 
+//q.peekLast(); q.pollFirst(); offer(E e)) size() addFirst(stack.pop()) addLast(E e)
+//contains(Object o) get(int index) getFirst() getLast()
+//indexOf(Object o) lastIndexOf(Object o) offerFirst(E e)
+//offerLast(E e) peek() peekFirst() peekLast() poll() pollFirst()
+//pollLast() pop() push(E e) remove() (removes 1st element)
+//remove(int index) removeFirstOccurrence(Object o) removeLastOccurrence(Object o)
+
+Queue<Integer> minHeap= new PriorityQueue<>();
+// offer​(E e) remove​(Object o) peek() poll()
+Queue<Integer> smallHeap
+= new PriorityQueue<>((a,b)->b-a); //small elements- maxHeap 
+//smallHeap.add(num); size() peek() poll() isEmpty()
+Queue<Integer> largeHeap;
+= new PriorityQueue<>((a,b)->a-b); //large elements- minHeap  -by default
+
+Queue<Integer> q= new ArrayDeque<>();
+//double ended queue
+//add(Element e) addFirst(Element e) addLast(Element e) clear() 
+//contains(Obj) getFirst() getLast() removeFirst() removeLast()
+//pop() push(Element e) - for stack represented by deque
+// first e e e last
+
+
+
+Set<String> visited= new HashSet<>(); 
+HashSet<Character> set= new HashSet<>(map.values());
+if(!seen.add(nums[i])) return true;
+//returns True if the element is not present in the HashSet otherwise False 
+if the element is already present in the HashSet.
+//visited.contains(pat) add(E e) clear() contains(Object o) 
+//isEmpty() remove(Object o) size() 
+
+
+Stack<String> stack= new Stack<>();
+//push(), pop(), peek(), isEmpty()
+
+
+Map<String,List<String>> adjList= new HashMap<>();
+List<String> wordlist=adjList.getOrDefault(string.toString(),new ArrayList<String>());
+Map<String,PriorityQueue<String>> graph=new HashMap<>();
+graph.computeIfAbsent(ticket.get(0),k->new PriorityQueue<>()).add(ticket.get(1));
+//get(Object key) containsKey(Object key) containsValue(Object value) 
+//getOrDefault(Object key, V defaultValue) size() //no. of key-value pairs
+//isEmpty() clear() keySet() map.values()
+//put(Object key, Object value)- If an existing key is passed then the previous value gets returned. 
+If a new pair is passed, then NULL is returned.
+//putIfAbsent(K key, V value) remove(Object key) replace(K key, V value)
+//HashMap: public HashMap<Integer,Node> map= new HashMap<>();
+map.containsKey(node.val); map.get(node.val); map.put(key,lst);
+map.getOrDefault(pre, new ArrayList<Integer>()); 
+map.contains(currNode); map.add(currNode); map.keySet()
+
+
+int[][] dp= new int[m+2][n+2];
+
+Queue using Stack: //LIFO -FIFO 5 | 5 4 insert 3 in empty; reverse previous;//cut to stack2, insert 3 in stack1, cut to stack1; 5 4 3
+
+Initialization:
+Queue<TreeNode> q= new LinkedList<>(); 
+List<Integer> list= new ArrayList<>();
+List<Pair<Integer,Integer>>[] graph= new List[n];
+List<List<Integer>> ans= new ArrayList<>();
+Set<Integer> rows = new HashSet<>();
+PriorityQueue<int[]> pq= new PriorityQueue<>((a,b)->Integer.compare((a[0]*a[0]+a[1]*a[1]),(b[0]*b[0]+b[1]*b[1])) );
+Stack<Integer> op= new Stack<>();
+
+list.add(); list.remove();
+q.add(); queue.offer(new int[] {i,j}); q.poll(); q.size(); q.peek(); q.isEmpty(); 
+(q.peek().getValue();  q.poll().getKey(); for pair in queue)
+Arrays.sort();  Arrays.asList(i,j);  a=b//can be done if both are arrays
+temp=Arrays.copyOf(prices,prices.length);  Arrays.fill(prices,Integer.MAX_VALUE);
+pq.offer(new int[]{0,0});  pq.poll();  pq.peek()[0];  pq.poll()[1];
+op.push(i);  op.pop();
+list.add(); arrlist.size()
+rows.add(i);
+
+ArrayList: ArrayList<Integer> list= new ArrayList<>(); list.get(list.size()-1);
+for(long i: list); //traversal
+
+
+/*
+graph[u].add(new Pair<>(v,w));
+	for(Pair<Integer,Integer> node: graph[u]){
+                int v=node.getKey();
+                int w= node.getValue();
+
+int[][] dir= {{0,1},{0,-1},{1,0},{-1,0}}; for(int[] d:dir){i=d[0],j=d[1]};
+boolean[][] pacific = new boolean[rows][cols];
+
+Iterating through 2 dimensional array: 
+m=arr.length, n=arr[0].length;
+
+List<int[]> res= new ArrayList<>();
+return res.toArray(new int[res.size()][]);
+
+Set<String> wdset= new HashSet<>(wordDict);
+*/
+
+Math.max(); //avg(), sin(), cos(), tan(), round(), ceil(), floor(), abs()
+
+Check end of String:
+
+String myString = "ABCD";
+for (char c : myString.toCharArray()) //for each loop
+{
+  System.out.println("Characer is " + c);
+}
+OR
+for (int i = 0; i < myString.length(); i++)
+{
+  System.out.println("Character is " + myString.charAt(i));
+}
+
+
+
+OOPS:
+Class Associate with 4 attributes
+2 static functions to find objects with maxexp and search by id respectively
+from the array of objects
+
+import java.util.*;
+public class Associate_Solution{ //don't put () brackets beside class
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int n=sc.nextInt();
+		Associate[] arr= new Associate[n];
+		for(int i=0;i<n;i++) {
+			var a=sc.nextInt(); sc.nextLine(); //very imp otherwise error
+			var b=sc.nextLine();
+			var c=sc.nextDouble(); sc.nextLine(); //very imp otherwise error
+			var d=sc.nextInt(); sc.nextLine(); //very imp otherwise error
+			arr[i]= new Associate(a,b,c,d);
+		}
+		double score=sc.nextDouble();
+		sc.close();
+		Associate step1= searchAssociateByScores(arr, score);
+		if(step1==null)
+			System.out.println("No Associate found with mentioned scores");
+		else 
+			System.out.println(step1.id+"\n"+step1.name);
+		
+		
+		Associate step2= findAssociateWithMaxExperience(arr);
+		System.out.println(step2.id);
+	}
+	
+	static Associate searchAssociateByScores(Associate[] arr, double score) {
+		for(Associate tmp: arr) {
+			if(tmp.score == score)
+				return tmp;
+		}
+		return null;
+	}
+	//give return types of functions
+	static Associate findAssociateWithMaxExperience(Associate[] arr) {
+		Associate max=arr[0];
+		for(Associate tmp: arr)
+			if(tmp.exp > max.exp)
+				max=tmp;
+		return max;
+	}
+}
+
+
+class Associate {
+	int id;
+	String name;
+	double score;
+	int exp;
+	//constructor only name no class
+	public Associate(int id, String name, double score, int exp) {
+		this.id=id;
+		this.name=name;
+		this.score=score;
+		this.exp=exp;
+	}
+	//getters
+	public int getId() {
+		return id;
+	}
+	public String getname() {
+		return name;
+	}
+	public double getscore() {
+		return score;
+	}
+	public int getexp() {
+		return exp;
+	}
+	//setters
+	public void setId(int id) {
+		this.id=id;
+	}
+	public void setname(String name) {
+		this.name=name;
+	}
+	public void setscore(double score) {
+		this.score=score;
+	}
+	public void setexp(int exp) {
+		this.exp=exp;
+	}
+}
+
+OOPS 2:
+
+import java.util.*;
+public class Travel_Solution{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		TravelAgencies[] arr= new TravelAgencies[4];
+		for(int i=0;i<4;i++) {
+			int a=sc.nextInt(); sc.nextLine();
+			String b=sc.nextLine();
+			String c=sc.nextLine();
+			int d=sc.nextInt(); sc.nextLine();
+			boolean e=sc.nextBoolean(); sc.nextLine();
+			arr[i]= new TravelAgencies(a,b,c,d,e);
+		}
+		int regNo=sc.nextInt(); sc.nextLine();
+		String pType=sc.nextLine(); sc.close();
+		
+		TravelAgencies set1= findAgencyWithHighestPackagePrice(arr);
+		System.out.println(set1.price);
+		TravelAgencies set2= agencyDetailsForGivenldAndType(arr,regNo,pType);
+		System.out.println(set2.aName+":"+set2.price);
+	}
+	
+	static TravelAgencies findAgencyWithHighestPackagePrice(TravelAgencies[] arr) {
+		TravelAgencies max=arr[0];
+		for(TravelAgencies tmp: arr)
+			if(tmp.price > max.price)
+				max=tmp;
+		return max;
+	}
+	
+	static TravelAgencies agencyDetailsForGivenldAndType(TravelAgencies[] arr, int regNo, String pType) {
+		for(TravelAgencies tmp: arr)
+			if(tmp.regNo==regNo && tmp.pType.equals(pType) &&tmp.fFacility)
+				return tmp;
+		return null;
+	}
+}
+
+class TravelAgencies{
+	int regNo;
+	String aName;
+	String pType;
+	int price;
+	boolean fFacility;
+	
+	public TravelAgencies(int regNo, String aName, String pType, int price, boolean fFacility) {
+		this.regNo=regNo;
+		this.aName=aName;
+		this.pType=pType;
+		this.price=price;
+		this.fFacility=fFacility;
+	}
+}
+
+
+Reverse Linked List:
+
+ListNode second=slow.next; //start of second list 4
+        ListNode prev= slow.next = null;// 3->next=null
+        while(second!=null){ //reverse second linked list second=4, prev=null, tmp=5
+            ListNode tmp= second.next; //tmp= 5
+            second.next= prev; // 4->null,  5->4
+            prev= second; // prev=4, prev=5
+            second=tmp;// 4=5,  second=5 4->null, 5->4->null
+        }
+
+
+All permutations of a String:
+static void permute(String str, int l, int u) {
+	if(l==u)
+		arrlist.add(Integer.valueOf(str));
+	for(int i=l;i<=u;i++) {
+		str=swap(str,l,i);
+		permute(str,l+1,u);
+		str=swap(str,l,i);
+	}
+}
+
+
+Merging Linked Lists:
+
+ListNode first= head;//1st of 1st list
+        second=prev;//1st of second list
+        while(second!=null){ // 1 2 3  5 4
+            ListNode tmp1= first.next;
+            ListNode tmp2= second.next;
+            first.next=second;// 1 5
+            second.next= tmp1; // 1 5 2
+            first= tmp1;
+            second= tmp2;
+        }
+
+Remove Nth node from end:
+
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        //(0)-p1  1  2  3  4-p2  -5  6  7 1st-0(n-1) 2nd-head+n
+        if(head==null || head.next==null) return null;
+        ListNode tmp= new ListNode(0);
+        tmp.next=head;
+        ListNode p1=tmp; //n-1
+        ListNode p2=head; //n+1
+        while(n>0){
+            p2=p2.next;
+            n--;
+        }
+        while(p2!=null){
+            p2=p2.next;
+            p1=p1.next;
+        }
+        p1.next=p1.next.next;
+        return tmp.next;
+    }
+}
+
+
+Working with HashMaps:
+
+class Solution {
+    public Node copyRandomList(Node head) {
+        Node cur= head;
+        HashMap<Node, Node> map= new HashMap<>();
+        while(cur!=null){
+            map.put(cur, new Node(cur.val));
+            cur=cur.next;
+        }
+        cur=head;
+        while(cur!=null){
+            map.get(cur).next=map.get(cur.next);
+            map.get(cur).random=map.get(cur.random);
+            cur=cur.next;
+        }
+        return map.get(head);
+    }
+}
+
+
+Inserting at the end of a Linked List:
+
+	ListNode newNode=new ListNode(q);
+	    temp=head;
+            while(temp.next!=null){
+                temp=temp.next;
+            }
+            temp.next=newNode;
+            newNode.next=null;
+
+Fast and Slow pointer Approach- Finding cycle in array:
+
+	ListNode fast=head;
+        ListNode slow=head;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow)
+                return true;
+        }
+        return false;
+
+Level order traversal BFS:
+
+	List<List<Integer>> res= new ArrayList<>();
+        Queue<TreeNode> queue= new LinkedList<>();
+        
+        if(root==null) return res;
+        
+        queue.add(root);
+        while(!queue.isEmpty()){
+            int len=queue.size();
+            List<Integer> level= new ArrayList<>();
+            for(int i=0;i<len;i++){
+                TreeNode curr= queue.poll();
+                level.add(curr.val);
+                if(curr.left!=null)
+                    queue.add(curr.left);
+                if(curr.right!=null)
+                    queue.add(curr.right);
+            }
+            res.add(level);
+        }
+        return res;
+
+Recursion : 
+	Good nodes in a binary tree:
+
+    public int goodNodes(TreeNode root) {
+        return helper(root,-99999);
+    }
+    public int helper(TreeNode root, int max){
+        if(root==null) return 0;
+        int res= root.val >= max ? 1 : 0;
+        res+=helper(root.left,Math.max(root.val,max));
+        res+=helper(root.right,Math.max(root.val,max));
+        return res;
+    }
+
+Inorder traversal:
+
+    public void inorder(TreeNode root, List<Integer> list){
+        if(root==null) return;
+        inorder(root.left,list);
+        list.add(root.val);
+        inorder(root.right,list);
+    }
+
+
+AddWord in Trie:
+
+    public void addWord(String word) {
+        Node curr= root;
+        
+        for(char ch: word.toCharArray()){
+            if(curr.children[ch-'a']==null)
+                curr.children[ch-'a']=new Node(ch);
+            curr=curr.children[ch-'a'];
+        }
+        curr.isWord=true;
+    }
+
+Priority Queue (Min Heap) Implementation: K closest points to origin:
+
+    public int[][] kClosest(int[][] points, int k) {
+        PriorityQueue<int[]> q= new PriorityQueue<>((a,b)->Integer.compare((a[0]*a[0]+a[1]*a[1]),(b[0]*b[0]+b[1]*b[1])) );
+        for(int[] point: points)
+            q.add(point);
+        int[][] ans= new int[k][2];
+        for(int i=0;i<k;i++){
+            int[] cur= q.poll();
+            ans[i][0]=cur[0];
+            ans[i][1]=cur[1];
+        }
+        return ans;
+    }
+
+Heap 2 : Kth largest element:
+
+    public int findKthLargest(int[] nums, int k) {
+        //create a min heap
+        PriorityQueue<Integer> heap= new PriorityQueue<>();
+        for(int num: nums){
+            heap.add(num);
+            if(heap.size()>k)
+                heap.poll();// 6 5 4 3
+        }
+        return heap.peek();
+    }
+
+Backtracking tree
+
+Find max area of 1's in graph of 0-1:
+
+class Solution {
+    public int maxAreaOfIsland(int[][] grid) {
+        int ans=0;
+        int m=grid.length;
+        int n=grid[0].length;
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++)
+                if(grid[i][j]==1)
+                    ans=Math.max(dfs(grid,i,j,m,n,new int[] {0}), ans);
+        return ans;
+    }
+    
+    public int dfs(int[][] grid, int i,int j,int m,int n, int[] count){
+        if(i<0||j<0||i>=m||j>=n||grid[i][j]==0)
+            return count[0];
+        count[0]++;
+        grid[i][j]=0; //marked visited
+        dfs(grid,i+1,j,m,n,count); //dfs(all four sides)
+        dfs(grid,i-1,j,m,n,count);
+        dfs(grid,i,j+1,m,n,count);
+        dfs(grid,i,j-1,m,n,count);
+        return count[0];
+    }
+}
+
+Pacific Atlantic Water Flow:
+
+class Solution {
+    int[][] dir= {{0,1},{0,-1},{1,0},{-1,0}};
+    
+    public List<List<Integer>> pacificAtlantic(int[][] h) {
+        List<List<Integer>> res= new ArrayList<>();
+        int rows=h.length; int cols=h[0].length;
+        boolean[][] pacific = new boolean[rows][cols];
+        boolean[][] atlantic = new boolean[rows][cols];
+        for(int i=0;i<cols;i++){
+            dfs(h,0,i,Integer.MIN_VALUE,pacific);//1st row
+            dfs(h,rows-1,i,Integer.MIN_VALUE,atlantic);//last row
+        }
+        for(int i=0;i<rows;i++){
+            dfs(h,i,0,Integer.MIN_VALUE,pacific);//1st col
+            dfs(h,i,cols-1,Integer.MIN_VALUE,atlantic);//last col
+        }
+        for(int i=0;i<rows;i++)
+            for(int j=0;j<cols;j++)
+                if(pacific[i][j] && atlantic[i][j])
+                    res.add(Arrays.asList(i,j));
+        return res;
+    }
+    
+    private void dfs(int[][] h,int i,int j,int prev,boolean[][] ocean){
+        if(i<0||j<0||i>=ocean.length||j>=ocean[0].length) return;
+        if(h[i][j]<prev || ocean[i][j]) return;
+        ocean[i][j]=true;
+        for(int[] d:dir)
+            dfs(h,i+d[0],j+d[1],h[i][j],ocean);
+    }
+}
+
+Oranges count: //using bfs 
+
+class Solution {
+    public int orangesRotting(int[][] grid) {
+        int m=grid.length, n=grid[0].length;
+        Queue<int[]> queue= new LinkedList<>();
+        int fresh=0; //use bfs, queue, ro to queue
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++){
+                if(grid[i][j]==2) queue.offer(new int[] {i,j});
+                else if(grid[i][j]==1) fresh+=1;
+            }
+        int count=0;
+        int[][] dirs={ { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+        while(!queue.isEmpty() && fresh!=0){
+            count+=1; //time
+            int sz=queue.size();
+            for(int i=0;i<sz;i++){//for each item in queue
+                int[] rotten= queue.poll();
+                int r=rotten[0], c=rotten[1];
+                for(int[] dir:dirs){
+                    int x=r+dir[0], y=c+dir[1];
+                    if(x>=0 && y>=0 && x<m && y<n && grid[x][y]==1){
+                        grid[x][y]=2;
+                        queue.offer(new int[] {x,y});
+                        fresh-=1;
+                    }
+                }
+            }
+        }
+        return fresh==0 ? count : -1;
+    }
+}
+
+
+Initialize for List of Lists:
+	for(int i=0;i<n;i++)
+            graph[i]=new ArrayList<>();
+
+Insert Interval:
+
+class Solution {
+    public int[][] insert(int[][] intervals, int[] newi) {
+        List<int[]> res= new ArrayList<>();
+        for(int[] in: intervals){// [1,3] [2,5]
+            if(newi==null||in[1]<newi[0]) res.add(in);//after
+            else if(in[0]>newi[1]){//newi before
+                res.add(newi);
+                res.add(in);
+                newi=null;
+            } 
+            else{
+                newi[0]=Math.min(newi[0],in[0]);
+                newi[1]=Math.max(newi[1],in[1]);
+            }
+        }
+        if(newi!=null) res.add(newi);
+        return res.toArray(new int[res.size()][]);
+    }
+}
+
+Binary Tree Maximum Path Sum :
+
+class Solution {
+    public int maxPathSum(TreeNode root) {
+        int[] res= {Integer.MIN_VALUE};
+        maxPathSum(root,res);
+        return res[0];
+    }
+    public int maxPathSum(TreeNode root, int[] res){
+        if(root==null) return 0;
+        int left=Math.max(0, maxPathSum(root.left,res));//9
+        int right=Math.max(0, maxPathSum(root.right,res));
+        res[0]=Math.max(res[0],root.val+left+right); //compute
+        
+        return root.val+Math.max(left,right);
+    }
+}
+
+Reconstruct Itinerary:
+//Visit every edge of travel starting from a source
+
+class Solution {
+    public List<String> findItinerary(List<List<String>> tickets) {
+        LinkedList<String> itinerary= new LinkedList<>();
+        Map<String,PriorityQueue<String>> graph=new HashMap<>();
+        Stack<String> stack= new Stack<>();
+        
+        for(List<String> ticket: tickets){
+            graph.computeIfAbsent(ticket.get(0),k->new PriorityQueue<>()).add(ticket.get(1)); //create adj List
+        }
+        
+        stack.push("JFK");
+        while(!stack.isEmpty()){
+            String nextDest = stack.peek();
+            if(!graph.getOrDefault(nextDest,new PriorityQueue<>()).isEmpty())
+                stack.push(graph.get(nextDest).poll());
+            else
+                itinerary.addFirst(stack.pop());
+        }
+        return itinerary;
+    }
+}
